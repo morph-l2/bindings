@@ -7,6 +7,7 @@ const (
 	GasPriceOracle      = "0x530000000000000000000000000000000000000F"
 	L2Sequencer         = "0x5300000000000000000000000000000000000003"
 	L2Gov               = "0x5300000000000000000000000000000000000004"
+	L2Submitter         = "0x5300000000000000000000000000000000000005"
 
 	DeployerWhitelist          = "0x4200000000000000000000000000000000000002"
 	LegacyERC20ETH             = "0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000"
@@ -47,6 +48,7 @@ var (
 	L1FeeVaultAddr                 = common.HexToAddress(L1FeeVault)
 	L2SequencerAddr                = common.HexToAddress(L2Sequencer)
 	GovAddr                        = common.HexToAddress(L2Gov)
+	SubmitterAddr                  = common.HexToAddress(L2Submitter)
 	Predeploys                     = make(map[string]*common.Address)
 )
 
@@ -70,4 +72,5 @@ func init() {
 	Predeploys["BaseFeeVault"] = &BaseFeeVaultAddr
 	Predeploys["L2Sequencer"] = &L2SequencerAddr
 	Predeploys["Gov"] = &GovAddr
+	Predeploys["Submitter"] = &SubmitterAddr
 }
