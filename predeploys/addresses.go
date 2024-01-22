@@ -13,7 +13,7 @@ const (
 	L2StandardERC20Gateway = "0x5300000000000000000000000000000000000008"
 	L2ERC721Gateway        = "0x5300000000000000000000000000000000000009"
 	GasPriceOracle         = "0x5300000000000000000000000000000000000010"
-	l1FeeVault             = "0x530000000000000000000000000000000000001A"
+	L2TxFeeVault           = "0x530000000000000000000000000000000000001A"
 	ProxyAdmin             = "0x530000000000000000000000000000000000001B"
 )
 
@@ -29,7 +29,7 @@ var (
 	L2ETHGatewayAddr           = common.HexToAddress(L2ETHGateway)
 	L2StandardERC20GatewayAddr = common.HexToAddress(L2StandardERC20Gateway)
 	L2ERC721GatewayAddr        = common.HexToAddress(L2ERC721Gateway)
-	l1FeeVaultAddr             = common.HexToAddress(l1FeeVault)
+	L2TxFeeVaultAddr           = common.HexToAddress(L2TxFeeVault)
 
 	Predeploys = make(map[string]*common.Address)
 )
@@ -46,5 +46,5 @@ func init() {
 	Predeploys["L2ETHGateway"] = &L2ETHGatewayAddr
 	Predeploys["L2StandardERC20Gateway"] = &L2StandardERC20GatewayAddr
 	Predeploys["L2ERC721Gateway"] = &L2ERC721GatewayAddr
-	Predeploys["l1FeeVault"] = &l1FeeVaultAddr
+	Predeploys["L2TxFeeVault"] = &L2TxFeeVaultAddr
 }
