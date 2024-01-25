@@ -44,6 +44,9 @@ version:
 compile:
 	./compile.sh
 
+compile-forge:
+	./compile.sh forge
+
 system-config-bindings: compile
 	./gen_bindings.sh contracts/L1/SystemConfig.sol:SystemConfig $(pkg)
 
@@ -129,7 +132,7 @@ legacy-message-passer-bindings: compile
 	./gen_bindings.sh contracts/legacy/LegacyMessagePasser.sol:LegacyMessagePasser $(pkg)
 
 erc20-bindings: compile
-	./gen_bindings.sh node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol:ERC20 $(pkg)
+	./gen_bindings.sh @openzeppelin/contracts/token/ERC20/ERC20.sol:ERC20 $(pkg)
 
 weth9-bindings: compile
 	./gen_bindings.sh contracts/vendor/WETH9.sol:WETH9 $(pkg)
@@ -140,7 +143,7 @@ deployer-whitelist-bindings: compile
 l1-blocknumber-bindings: compile
 	./gen_bindings.sh contracts/legacy/L1BlockNumber.sol:L1BlockNumber $(pkg)
 
-more:
+more: compile-forge
 	go run ./gen/main.go \
 		-artifacts ../contracts/artifacts \
 		-out ./bindings \
